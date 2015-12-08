@@ -3,10 +3,11 @@ from collections import Counter
 
 # def word_frequency(file):
 with open("sample.txt") as sample:
-        text = sample.read().lower()
-        # int sample = 0
-        # sample = open("sample.txt", 'r')
-        # for countWords in sample:
-        #     re.search([a-z])
-        for line in text.split():
-            print(line)
+        words = re.findall('[a-z]+', sample.read().lower())
+        word_count = Counter(words).most_common(20)
+        print(word_count)
+
+
+# text = sample.read().lower()
+        # for line in text.split():
+        #     print(line)
